@@ -103,8 +103,19 @@ const MyDocument = () => {
               )}
             </View>
 
+            <View style={{ marginTop: 16, marginLeft: 32 }}>
+              <Text>1.3 Professional Positions Held</Text>
+              {experiencesContext.state.professionalPositions.map(
+                (exp, index) => {
+                  return (
+                    <Text style={{ display: "inline", marginLeft: 64 }}>
+                      {exp}
+                    </Text>
+                  );
+                }
+              )}
+            </View>
           </View>
-
         </Page>
       </Document>
     </PDFViewer>

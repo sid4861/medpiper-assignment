@@ -3,6 +3,7 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import HospitalExperiences from "./hospitalExperiences";
 import SpecialAssignmentsServed from "./specialAssignmentsServed";
+import ProfessionalPositions from "./professionalPositions";
 
 const ControlledTabs = () => {
   const [key, setKey] = useState("hospital-experiences");
@@ -19,7 +20,7 @@ const ControlledTabs = () => {
         <SpecialAssignmentsServed />
       </Tab>{" "}
       <Tab eventKey="professional-positions" title="professional-positions">
-        hi{" "}
+        <ProfessionalPositions />
       </Tab>{" "}
     </Tabs>
   );
