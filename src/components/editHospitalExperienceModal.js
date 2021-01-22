@@ -4,8 +4,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
+import EditIcon from "../edit-24px.svg";
 
-const EditHospitalExperienceModal = () => {
+const EditHospitalExperienceModal = (props) => {
   const { editHospitalExperience, state } = useContext(experiencesContext);
   const [hospitalExperience, setHospitalExperience] = useState("");
 
@@ -15,23 +16,18 @@ const EditHospitalExperienceModal = () => {
 
   return (
     <>
-      <Button
-        variant="primary"
-        style={{ margin: "auto", marginTop: "16px" }}
-        onClick={handleShow}
-      >
-        Add new{" "}
-      </Button>
+      <img src={EditIcon} onClick={handleShow}></img>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title> Please enter new hospital experience </Modal.Title>{" "}
+          <Modal.Title> Edit hospital experience </Modal.Title>{" "}
         </Modal.Header>{" "}
         <Modal.Body>
           <Form>
             <Form.Group as={Col} controlId="hospitalExperience">
               <Form.Control
                 type="text"
-                placeholder="Enter hospital experience"
+                placeholder={props.experience}
                 value={hospitalExperience}
                 onChange={(event) => {
                   setHospitalExperience(event.target.value);
@@ -44,7 +40,7 @@ const EditHospitalExperienceModal = () => {
           <Button
             variant="success"
             onClick={() => {
-              addHospitalExperience(hospitalExperience);
+              editHospitalExperience(hospitalExperience, props.expIndex);
               handleClose();
             }}
           >

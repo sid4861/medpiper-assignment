@@ -3,6 +3,7 @@ import { Context as experiencesContext } from "../context/experiencesContext";
 import Button from 'react-bootstrap/Button';
 import AddHospitalExperienceModal from './addHospitalExperienceModal';
 import EditIcon from '../edit-24px.svg';
+import EditHospitalExperienceModal from './editHospitalExperienceModal';
 
 const HospitalExperiences = () => {
   const { addHospitalExperience, state } = useContext(experiencesContext);
@@ -12,7 +13,8 @@ const HospitalExperiences = () => {
              <li style={{display: 'inline'}}> 
                 {exp} 
             </li>
-            <img src={EditIcon} onClick={() => {console.log('edit clicked')}} ></img>
+            {/* <img src={EditIcon} onClick={() => {console.log('edit clicked')}} ></img> */}
+            <EditHospitalExperienceModal experience={exp} expIndex={index} />
           </div>
      );
   });

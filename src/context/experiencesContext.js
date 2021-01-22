@@ -8,7 +8,10 @@ const experiencesReducer = (state, action) => {
         hospitalExperiences: [...state.hospitalExperiences, action.payload],
       };
     case "edit_hospital_experience":
-      return { ...state, middleName: action.payload };
+      return {
+        ...state,
+        hospitalExperiences: Object.assign([], state.hospitalExperiences, {[action.payload.index]: action.payload.hospitalExperience})
+      };
     case "delete_hospital_experience":
       return { ...state, middleName: action.payload };
     case "add_special_assignment_served":
@@ -27,8 +30,15 @@ const addHospitalExperience = (dispatch) => {
 };
 
 const editHospitalExperience = (dispatch) => {
-  return (hospitalExperience) => {
-    dispatch({ type: "edit_hospital_experience", payload: hospitalExperience });
+  return (hospitalExperience, index) => {
+    //   console.log(hospitalExperience, index);
+    dispatch({
+      type: "edit_hospital_experience",
+      payload: {
+        hospitalExperience: hospitalExperience,
+        index: index,
+      },
+    });
   };
 };
 
