@@ -4,11 +4,11 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-import DeleteIcon from "../delete-24px.svg";
+import EditIcon from "../edit-24px.svg";
 
-const DeleteHospitalExperienceModal = (props) => {
-  const { deleteHospitalExperience, state } = useContext(experiencesContext);
-  const [hospitalExperience, setHospitalExperience] = useState("");
+const EditSpecialAssignmentModal = (props) => {
+  const { editSpecialAssignmentServed, state } = useContext(experiencesContext);
+  const [specialAssignment, setSpecialAssignment] = useState("");
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -16,19 +16,21 @@ const DeleteHospitalExperienceModal = (props) => {
 
   return (
     <>
-      <img src={DeleteIcon} onClick={handleShow}></img>{" "}
+      <img src={EditIcon} onClick={handleShow}></img>{" "}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title> Deleting hospital experience </Modal.Title>{" "}
+          <Modal.Title> Edit Special Assignment </Modal.Title>{" "}
         </Modal.Header>{" "}
         <Modal.Body>
           <Form>
-            <Form.Group as={Col} controlId="hospitalExperience">
+            <Form.Group as={Col} controlId="specialAssignment">
               <Form.Control
                 type="text"
                 placeholder={props.experience}
-                value={hospitalExperience}
-                disabled
+                value={specialAssignment}
+                onChange={(event) => {
+                  setSpecialAssignment(event.target.value);
+                }}
               />{" "}
             </Form.Group>{" "}
           </Form>{" "}
@@ -37,11 +39,11 @@ const DeleteHospitalExperienceModal = (props) => {
           <Button
             variant="success"
             onClick={() => {
-              deleteHospitalExperience(props.experience, props.expIndex);
+              editSpecialAssignmentServed(specialAssignment, props.expIndex);
               handleClose();
             }}
           >
-            Confirm{" "}
+            Save{" "}
           </Button>{" "}
           <Button variant="danger" onClick={handleClose}>
             Cancel{" "}
@@ -52,4 +54,4 @@ const DeleteHospitalExperienceModal = (props) => {
   );
 };
 
-export default DeleteHospitalExperienceModal;
+export default EditSpecialAssignmentModal;

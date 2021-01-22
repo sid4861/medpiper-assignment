@@ -1,26 +1,26 @@
 import React, { useState } from "react";
-import Tabs from 'react-bootstrap/Tabs';
-import Tab from 'react-bootstrap/Tab';
-import HospitalExperiences from './hospitalExperiences';
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tab";
+import HospitalExperiences from "./hospitalExperiences";
+import SpecialAssignmentsServed from "./specialAssignmentsServed";
 
 const ControlledTabs = () => {
   const [key, setKey] = useState("hospital-experiences");
 
   return (
-    <Tabs
-      id="controlled-tab"
-      activeKey={key}
-      onSelect={(k) => setKey(k)}
-    >
+    <Tabs id="controlled-tab" activeKey={key} onSelect={(k) => setKey(k)}>
       <Tab eventKey="hospital-experiences" title="hospital-experiences">
         <HospitalExperiences />
-      </Tab>
-      <Tab eventKey="special-assignments-served" title="special-assignments-served">
-        hi
-      </Tab>
+      </Tab>{" "}
+      <Tab
+        eventKey="special-assignments-served"
+        title="special-assignments-served"
+      >
+        <SpecialAssignmentsServed />
+      </Tab>{" "}
       <Tab eventKey="professional-positions" title="professional-positions">
-        hi
-      </Tab>
+        hi{" "}
+      </Tab>{" "}
     </Tabs>
   );
 };

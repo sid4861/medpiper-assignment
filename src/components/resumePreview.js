@@ -73,17 +73,38 @@ const MyDocument = () => {
               ></Image>
             </View>
           </View>
+
           <View style={{ marginTop: 16 }}>
             <Text>1 - Professional Experiences</Text>
+
             <View style={{ marginTop: 16, marginLeft: 32 }}>
               <Text>1.1 Hospital Experiences</Text>
               {experiencesContext.state.hospitalExperiences.map(
                 (exp, index) => {
-                  return <Text style={{ display: "inline", marginLeft: 64 }}>{exp}</Text>;
+                  return (
+                    <Text style={{ display: "inline", marginLeft: 64 }}>
+                      {exp}
+                    </Text>
+                  );
                 }
               )}
             </View>
+
+            <View style={{ marginTop: 16, marginLeft: 32 }}>
+              <Text>1.2 Special Assignments Served</Text>
+              {experiencesContext.state.specialAssignmentsServed.map(
+                (exp, index) => {
+                  return (
+                    <Text style={{ display: "inline", marginLeft: 64 }}>
+                      {exp}
+                    </Text>
+                  );
+                }
+              )}
+            </View>
+
           </View>
+
         </Page>
       </Document>
     </PDFViewer>
