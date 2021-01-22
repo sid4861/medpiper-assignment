@@ -3,7 +3,14 @@ import createDataContext from "./createDataContext";
 const experiencesReducer = (state, action) => {
   switch (action.type) {
     case "add_hospital_experience":
-      return { ...state, firstName: action.payload };
+      return {
+        ...state,
+        hospitalExperiences: [...state.hospitalExperiences, action.payload],
+      };
+    case "edit_hospital_experience":
+      return { ...state, middleName: action.payload };
+    case "delete_hospital_experience":
+      return { ...state, middleName: action.payload };
     case "add_special_assignment_served":
       return { ...state, middleName: action.payload };
     case "add_professional_position":
@@ -14,8 +21,23 @@ const experiencesReducer = (state, action) => {
 };
 
 const addHospitalExperience = (dispatch) => {
-  return (firstName) => {
-    dispatch({ type: "input_first_name", payload: firstName });
+  return (hospitalExperience) => {
+    dispatch({ type: "add_hospital_experience", payload: hospitalExperience });
+  };
+};
+
+const editHospitalExperience = (dispatch) => {
+  return (hospitalExperience) => {
+    dispatch({ type: "edit_hospital_experience", payload: hospitalExperience });
+  };
+};
+
+const deleteHospitalExperience = (dispatch) => {
+  return (hospitalExperience) => {
+    dispatch({
+      type: "delete_hospital_experience",
+      payload: hospitalExperience,
+    });
   };
 };
 
@@ -37,6 +59,8 @@ export const { Context, Provider } = createDataContext(
     addHospitalExperience,
     addSpecialAssignmentServed,
     addProfessionalPositions,
+    editHospitalExperience,
+    deleteHospitalExperience,
   },
   {
     hospitalExperiences: ["sjfhslhfsljdf", "jdfksjdfkjdsf", "kjadfksjdfkjdf"],
