@@ -63,7 +63,6 @@ const Form = (props) => {
           </Card.Body>
         </Accordion.Collapse>
       </Card>
-
       <Card>
         <Accordion.Toggle as={Card.Header} eventKey="2">
           Medical License
@@ -71,8 +70,10 @@ const Form = (props) => {
         <Accordion.Collapse eventKey="2">
           <Card.Body>
             <Alert variant="success">
-              <Alert.Heading>Below is the info you have entered</Alert.Heading>
-              <h3>Personal Details</h3>
+              <Alert.Heading>
+                Below is the info you have entered
+              </Alert.Heading>
+              <h3> Personal Details </h3>
               <ul>
                 <li> First name - {personalDetails.state.firstName} </li>
                 <li> Middle name - {personalDetails.state.middleName} </li>
@@ -81,23 +82,26 @@ const Form = (props) => {
                 <li> Gender - {personalDetails.state.gender} </li>
               </ul>
               <hr />
-              <h3>Professional Experiences</h3>
+              <h3> Professional Experiences </h3>
               <ul>
                 <li>
                   <h4> Hospital Experiences </h4>
                   <ul style={{ marginTop: "16px" }}>
-                    {hospitalExperiencesList}
+                    
+                    {hospitalExperiencesList}{" "}
                   </ul>
                 </li>
                 <li>
                   <h4> Special Assignments Served </h4>
                   <ul style={{ marginTop: "16px" }}>
+                    
                     {specialAssignmentsServedList}
                   </ul>
                 </li>
                 <li>
                   <h4> Professional Positions held </h4>
                   <ul style={{ marginTop: "16px" }}>
+                    
                     {professionalPositionsList}
                   </ul>
                 </li>
