@@ -198,12 +198,10 @@ export const { Context, Provider } = createDataContext(
     deleteProfessionalPosition,
   },
   {
-    hospitalExperiences: ["sjfhslhfsljdf", "jdfksjdfkjdsf", "kjadfksjdfkjdf"],
+    hospitalExperiences: [],
     specialAssignmentsServed: [
-      "sjfhslhfsljdf",
-      "jdfksjdfkjdsf",
-      "kjadfksjdfkjdf",
+      
     ],
-    professionalPositions: ["sjfhslhfsljdf", "jdfksjdfkjdsf", "kjadfksjdfkjdf"],
+    professionalPositions: [],
   }
 );

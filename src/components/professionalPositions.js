@@ -12,7 +12,7 @@ const ProfessionalPositions = () => {
     (exp, index) => {
       return (
         <div style={{ flexDirection: "row" }}>
-          <li style={{ display: "inline" }}> {exp} </li>{" "}
+          <li style={{ display: "inline" }}> {`\u2022 ${exp}`} </li>{" "}
           {/* <img src={EditIcon} onClick={() => {console.log('edit clicked')}} ></img> */}{" "}
           <EditProfessionalPositionsModal experience={exp} expIndex={index} />{" "}
           <DeleteProfessionalPositionModal experience={exp} expIndex={index} />{" "}
@@ -22,7 +22,7 @@ const ProfessionalPositions = () => {
   );
   return (
     <div>
-      <ul> {professionalPositionsList} </ul>{" "}
+      <ul style={{marginTop: '40px'}}> {professionalPositionsList} </ul>{" "}
       {/* <Button variant="primary" style={{margin: 'auto', marginTop: '16px'}} >Add New</Button> */}{" "}
       <AddProfessionalPositionModal />
     </div>

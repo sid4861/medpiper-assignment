@@ -83,7 +83,7 @@ const MyDocument = () => {
                 (exp, index) => {
                   return (
                     <Text style={{ display: "inline", marginLeft: 64 }}>
-                      {exp}
+                    {`\u2022 ${exp}`}
                     </Text>
                   );
                 }
@@ -96,7 +96,7 @@ const MyDocument = () => {
                 (exp, index) => {
                   return (
                     <Text style={{ display: "inline", marginLeft: 64 }}>
-                      {exp}
+                    {`\u2022 ${exp}`}
                     </Text>
                   );
                 }
@@ -109,7 +109,7 @@ const MyDocument = () => {
                 (exp, index) => {
                   return (
                     <Text style={{ display: "inline", marginLeft: 64 }}>
-                      {exp}
+                    {`\u2022 ${exp}`}
                     </Text>
                   );
                 }

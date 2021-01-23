@@ -12,7 +12,7 @@ const SpecialAssignmentsServed = () => {
     (exp, index) => {
       return (
         <div style={{ flexDirection: "row" }}>
-          <li style={{ display: "inline" }}> {exp} </li>{" "}
+          <li style={{ display: "inline" }}> {`\u2022 ${exp}`} </li>{" "}
           {/* <img src={EditIcon} onClick={() => {console.log('edit clicked')}} ></img> */}{" "}
           <EditSpecialAssignmentModal experience={exp} expIndex={index} />{" "}
           <DeleteSpecialAssignmentModal experience={exp} expIndex={index} />{" "}
@@ -22,7 +22,7 @@ const SpecialAssignmentsServed = () => {
   );
   return (
     <div>
-      <ul> {specialAssignmentsServedList} </ul>{" "}
+      <ul style={{marginTop: '40px'}} > {specialAssignmentsServedList} </ul>{" "}
       {/* <Button variant="primary" style={{margin: 'auto', marginTop: '16px'}} >Add New</Button> */}{" "}
       <AddSpecialAssignmentModal />
     </div>
